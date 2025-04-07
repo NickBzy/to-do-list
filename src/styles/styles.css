@@ -1,0 +1,127 @@
+/** FONTS **/
+@font-face {
+    font-family: 'Titillium';
+    src: url('../assets/fonts/Titillium-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Titillium-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Titillium';
+    src: url('../assets/fonts/Titillium-SemiboldUpright.woff2') format('woff2'),
+        url('../assets/fonts/Titillium-SemiboldUpright.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Titillium';
+    src: url('../assets/fonts/Titillium-Semibold.woff2') format('woff2'),
+        url('../assets/fonts/Titillium-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Titillium';
+    src: url('../assets/fonts/Titillium-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Titillium-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SeasideResortNF';
+    src: url('../assets/fonts/SeasideResortNF.woff2') format('woff2'),
+        url('../assets/fonts/SeasideResortNF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/** VARIABLES **/
+:root {
+    --light-green: #b1ebba;
+    --dark-green: #006b11;
+    --gold: #d4af37;
+    --white: #ffffff;
+    --light-grey: #d9d9d9;
+}
+
+/** CSS RESET **/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      interpolate-size: allow-keywords;
+    }
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  /** PROJECT STYLING **/
+  body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(white, lightblue);
+  }
+
+  .container {
+    width: 98%;
+    min-height: 98vh;
+    background-color: var(--light-green);
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 10vh 1fr;
+    grid-template-areas: 
+    'header header'
+    'sidebar main';
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  nav {
+    grid-area: sidebar;
+  }
+
+  main {
+    grid-area: main;
+  }
