@@ -51,6 +51,7 @@
     --gold: #d4af37;
     --white: #ffffff;
     --light-grey: #d9d9d9;
+    --border-radius-containers: 40px;
 }
 
 /** CSS RESET **/
@@ -96,15 +97,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(white, lightblue);
+    background: linear-gradient(lightblue, white);
+    font-family: 'Titillium';
   }
 
   .container {
     width: 98%;
     min-height: 98vh;
     background-color: var(--light-green);
-    padding: 40px;
-    border-radius: 40px;
+    border-radius: var(--border-radius-containers);
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -116,10 +117,80 @@
 
   header {
     grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: var(--border-radius-containers) var(--border-radius-containers) 0 0;
+  }
+
+  header h1 {
+    font-family: 'SeasideResortNF', sans-serif;
+    color: var(--dark-green);
+    font-size: 3rem;
   }
 
   nav {
     grid-area: sidebar;
+    background-color: var(--dark-green);
+    border-bottom-left-radius: var(--border-radius-containers);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 0;
+  }
+
+  nav .stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-size: clamp(1rem, 1.5vw, 4rem);
+  }
+
+  #number-projects {
+    color: var(--gold);
+    font-size: clamp(2rem, 4vw, 6rem);
+    font-weight: bold;
+  }
+
+  nav .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav .projects-list .project-sidebar, nav .add-project {
+    background-color: var(--gold);
+    display: flex;
+    justify-content: center;
+    border-radius: var(--border-radius-containers);
+    height: auto;
+    font-size: clamp(1.5rem, 2.5vw, 4rem);
+    padding: 8px 0;
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out,
+        color 0.2s ease-in-out;
+  }
+
+  nav .projects-list .project-sidebar:hover {
+    background-color: var(--white);
+    color: var(--gold);
+  }
+
+  nav .add-project {
+    font-weight: normal;
+    background-color: var(--dark-green);
+    border: none;
+  }
+
+  nav .add-project:hover {
+    font-weight: normal;
+    background-color: var(--light-grey);
+    color: #006b11;
   }
 
   main {
