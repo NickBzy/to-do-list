@@ -1,0 +1,163 @@
+/* CREATE PROJECT MODAL */
+.project-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+    height: 20%;
+    background-color: var(--gold);
+    z-index: 10;
+    border-radius: var(--border-radius-containers) 0 var(--border-radius-containers) var(--border-radius-containers);
+}
+
+.modal-name {
+    height: 30%;
+    background-color: var(--white);
+    border-radius: var(--border-radius-containers) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(2rem, 2vw, 3rem);
+}
+
+form {
+    display: flex;
+    height: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: clamp(1.2rem, 1.2vw, 1.7rem);
+}
+
+form .form-name {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    border-radius: 8px;
+}
+
+form button {
+    padding: 8px 20px;
+    border-radius: var(--border-radius-containers);
+    background-color: var(--light-green);
+    transition: background-color 0.2s ease-in-out,
+        color 0.2s ease-in-out;
+}
+
+form button:hover {
+    background-color: var(--dark-green);
+    color: var(--white);
+}
+
+
+/* CREATE TASK MODAL */
+.task-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+    height: 60%;
+    background-color: var(--gold);
+    z-index: 10;
+    border-radius: var(--border-radius-containers) 0 var(--border-radius-containers) var(--border-radius-containers);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-modal.hidden {
+    display: none;
+}
+
+.task-modal .modal-name {
+    height: 15%;
+    width: 100%;
+}
+
+.task-modal form {
+    height: 85%;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.task-modal form button {
+    align-self: center;
+}
+
+.task-modal form select, .task-modal form textarea {
+    border-radius: 8px;
+    padding: 4px;
+    resize: none;
+}
+
+/* INDIVIDUAL PROJECT EXPANDED (when selected) */
+main .projects-grid .project-item.selected {
+    position: fixed;
+    height: 75%;
+    width: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  main .projects-grid .project-item.selected .project-tasks {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    justify-content: flex-start;
+    gap: 24px;
+    overflow-y: auto;
+    max-height: 90%;
+  } 
+
+  main .projects-grid .project-item.selected .project-tasks .task {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  main .projects-grid .project-item.selected .project-tasks .task label {
+    width: 65%;
+  }
+
+  main .projects-grid .project-item.selected .project-tasks .task p {
+    display: block;
+    width: 20%;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+  }
+
+  main .projects-grid .project-item.selected .project-tasks .task svg {
+    display: block;
+    width: 20px;
+  }
+
+  main .projects-grid .project-item.selected .project-tasks .task svg.light {
+    fill: var(--light-green);
+  }
+
+  main .projects-grid .project-item.selected .project-tasks .task svg.moderate {
+    fill: var(--orange);
+  }
+
+  main .projects-grid .project-item.selected .project-tasks .task svg.high {
+    fill: var(--red);
+  }
+
+  main .projects-grid .project-item.selected .project-tasks .task svg.button {
+    fill: var(--white);
+    cursor: pointer;
+  }  
+
+  main .projects-grid .project-item.selected .project-tasks .task svg.button:hover {
+    fill: var(--dark-green);
+    transform: scale(1.2);
+  }

@@ -53,6 +53,8 @@
     --light-grey: #d9d9d9;
     --border-radius-containers: 40px;
     --black: #000000;
+    --orange:rgb(224, 131, 9);
+    --red: rgba(223, 58, 17, 0.842);
 }
 
 /** CSS RESET **/
@@ -118,6 +120,21 @@
     grid-template-areas: 
     'header header'
     'sidebar main';
+  }
+
+  /* OVERLAY */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .hidden {
+    display: none;
   }
 
   /* HEADER */
@@ -210,7 +227,7 @@
     gap: 40px;
   }
 
-  main .create-task {
+  main .create-task:first-child {
     align-self: flex-end;
     background-color: var(--light-green);
     padding: 10px;
@@ -237,6 +254,7 @@
     overflow-y: auto;
   }
 
+  /* INDIVIDUAL PROJECTS */
   main .projects-grid .project-item {
     background-color: var(--gold);
     height: 300px;
@@ -252,6 +270,12 @@
     align-items: center;
     color: var(--dark-green);
     font-size: clamp(1.5rem, 1.5vw, 2rem);
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  main .projects-grid .project-item .project-name:hover {
+    transform:scaleY(1.2);
   }
 
   main .projects-grid .project-item .project-tasks {
@@ -262,6 +286,48 @@
     gap: 12px;
     overflow-y: auto;
     max-height: 200px;
+  }
+
+  /* INDIVIDUAL TASK */
+  main .projects-grid .create-task {
+    background-color: var(--gold);
+    padding: 10px;
+    border-radius: var(--border-radius-containers);
+    color: var(--dark-green);
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-weight: bold;
+    border: none;
+    transition: color 0.2s ease-in-out;
+  }
+
+  main .projects-grid .create-task:hover {
+    color: var(--white);
+  }
+
+  main .projects-grid .project-item .project-tasks .task svg {
+    display: none;
+  }  
+
+  main .projects-grid .project-item .project-tasks .task p {
+    display: none;
+  }
+
+  /* INDIVIDUAL PROJECT EXPANDED (when selected) */
+  /* FOUND IN modals.css */
+  
+  /* Add project button in main grid */
+  main .projects-grid .add-project {
+    background-color: var(--light-green);
+    border-radius: var(--border-radius-containers) 0 var(--border-radius-containers) var(--border-radius-containers);
+    border: none;
+    font-size: clamp(1.5rem, 1.5vw, 2rem);
+    transition: border 0.1s ease-in-out,
+      color 0.2s ease-in-out;
+  }
+
+  main .projects-grid .add-project:hover {
+    border: 3px solid var(--dark-green);
+    color: var(--dark-green);
   }
 
   /* CUSTOM SCROLLBAR */
@@ -298,6 +364,10 @@
     position: relative;
     transition: background 0.2s;
   }
+
+  .custom-checkbox .task-title {
+    overflow-x: auto;
+  }
   
   .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
     content: "";
@@ -316,7 +386,7 @@
     border-color: var(--dark-green);
   }
 
-  .custom-checkbox input[type="checkbox"]:checked ~ .task{
+  .custom-checkbox input[type="checkbox"]:checked ~ .task-title{
     text-decoration: line-through;
-    color: var(--white);
+    color: var(--dark-green);
   }
