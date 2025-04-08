@@ -52,6 +52,7 @@
     --white: #ffffff;
     --light-grey: #d9d9d9;
     --border-radius-containers: 40px;
+    --black: #000000;
 }
 
 /** CSS RESET **/
@@ -97,8 +98,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(lightblue, white);
+    background: linear-gradient(lightblue, var(--light-grey));
     font-family: 'Titillium';
+  }
+
+  button {
+    cursor: pointer;
   }
 
   .container {
@@ -115,6 +120,7 @@
     'sidebar main';
   }
 
+  /* HEADER */
   header {
     grid-area: header;
     display: flex;
@@ -128,8 +134,10 @@
     font-family: 'SeasideResortNF', sans-serif;
     color: var(--dark-green);
     font-size: 3rem;
+    cursor: pointer;
   }
 
+  /* SIDEBAR */
   nav {
     grid-area: sidebar;
     background-color: var(--dark-green);
@@ -146,7 +154,7 @@
     justify-content: center;
     align-items: center;
     color: var(--white);
-    font-size: clamp(1rem, 1.5vw, 4rem);
+    font-size: clamp(1rem, 1.5vw, 3rem);
   }
 
   #number-projects {
@@ -167,7 +175,7 @@
     justify-content: center;
     border-radius: var(--border-radius-containers);
     height: auto;
-    font-size: clamp(1.5rem, 2.5vw, 4rem);
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
     padding: 8px 0;
     color: var(--white);
     font-weight: bold;
@@ -193,6 +201,122 @@
     color: #006b11;
   }
 
+  /* MAIN PART (Grid of projects) */
   main {
     grid-area: main;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  main .create-task {
+    align-self: flex-end;
+    background-color: var(--light-green);
+    padding: 10px;
+    border-radius: var(--border-radius-containers);
+    color: var(--dark-green);
+    font-size: clamp(1rem, 1.5vw, 4rem);
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease-in-out,
+        color 0.2s ease-in-out;
+  }
+
+  main .create-task:hover {
+    background-color: var(--dark-green);
+    color: var(--white);
+  }
+
+  main .projects-grid {
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  main .projects-grid .project-item {
+    background-color: var(--gold);
+    height: 300px;
+    border-radius: var(--border-radius-containers);
+  }
+
+  main .projects-grid .project-item .project-name {
+    background-color: var(--white);
+    height: 70px;
+    border-radius: var(--border-radius-containers) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-green);
+    font-size: clamp(1.5rem, 1.5vw, 2rem);
+  }
+
+  main .projects-grid .project-item .project-tasks {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    justify-content: flex-start;
+    gap: 12px;
+    overflow-y: auto;
+    max-height: 200px;
+  }
+
+  /* CUSTOM SCROLLBAR */
+  main .projects-grid .project-item .project-tasks::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  main .projects-grid .project-item .project-tasks::-webkit-scrollbar-thumb {
+    background-color: var(--white);
+    border-radius: 4px;
+  }
+  
+  /* CUSTOM CHECKBOX */
+  .custom-checkbox input[type="checkbox"] {
+    display: none;
+  }
+  
+  .custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    color: var(--black);
+  }
+  
+  .custom-checkbox .checkmark {
+    width: 20px;
+    height: 20px;
+    background-color: var(--white);
+    border: 2px solid var(--dark-green);
+    border-radius: 4px;
+    position: relative;
+    transition: background 0.2s;
+  }
+  
+  .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: 12px;
+    border: solid var(--white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .custom-checkbox input[type="checkbox"]:checked + .checkmark {
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+  }
+
+  .custom-checkbox input[type="checkbox"]:checked ~ .task{
+    text-decoration: line-through;
+    color: var(--white);
   }
