@@ -4,6 +4,11 @@ function createTask(title, description, dueDate, priority) {
     let taskDate = dueDate;
     let taskPriority = priority;
     let taskComplete = false;
+    const id = crypto.randomUUID();
+
+    function getId() {
+        return id;
+    }
 
     function getTitle() {
         return taskTitle;
@@ -55,7 +60,8 @@ function createTask(title, description, dueDate, priority) {
         changeDescription,
         changeDate,
         changePriority,
-        markComplete
+        markComplete,
+        getId
     };
 }
 
