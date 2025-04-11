@@ -6,13 +6,14 @@
     width: 60%;
     transform: translate(-50%, -50%);
     height: 20%;
-    background-color: var(--gold);
+    background-color: var(--gold-opaque);
     z-index: 10;
     border-radius: var(--border-radius-containers) 0 var(--border-radius-containers) var(--border-radius-containers);
 }
 
 .modal-name {
     height: 30%;
+    color: var(--dark-green);
     background-color: var(--white);
     border-radius: var(--border-radius-containers) 0;
     display: flex;
@@ -62,7 +63,7 @@ form button:hover {
     width: 60%;
     transform: translate(-50%, -50%);
     height: 60%;
-    background-color: var(--gold);
+    background-color: var(--gold-opaque);
     z-index: 10;
     border-radius: var(--border-radius-containers) 0 var(--border-radius-containers) var(--border-radius-containers);
     display: flex;
@@ -77,6 +78,20 @@ form button:hover {
 .task-modal .modal-name {
     height: 15%;
     width: 100%;
+    position: relative;
+}
+
+.task-modal .close-task-modal {
+  width: 40px;
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.task-modal .close-task-modal:hover {
+  fill: red;
 }
 
 .task-modal form {
@@ -98,6 +113,7 @@ form button:hover {
 /* INDIVIDUAL PROJECT EXPANDED (when selected) */
 main .projects-grid .project-item.selected {
     position: fixed;
+    background-color: var(--light-green-opaque);
     height: 75%;
     width: 75%;
     top: 50%;

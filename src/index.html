@@ -18,19 +18,15 @@
                 <span id="number-projects">0</span>
             </div>
             <div class="projects-list">
-                <div class="project-sidebar">
-                    <p>GYM</p>
-                </div>
-                <div class="project-sidebar">
-                    <p>STUDY</p>
-                </div>
+                
             </div>
             <button class="add-project">+ Add a Project</button>
         </nav>
         <main>
-            <button class="create-task">+ Create a task</button>
+            <button class="create-task-general">+ Create a task</button>
             <div class="projects-grid">
-                <div class="project-item"> <!-- selected -->
+                <!-- selected -->
+                <!-- <div class="project-item selected"> 
                     <div class="project-name">
                         <h3>GYM</h3>
                     </div>
@@ -162,7 +158,7 @@
                         
                     </div>
                 </div>
-                <button class="add-project">+ Add a Project</button>
+                <button class="add-project">+ Add a Project</button> -->
             </div>
         </main>
     </div>
@@ -175,10 +171,10 @@
         <form action="">
             <div class="form-name">
                 <label for="project">Project:</label>
-                <input type="text" id="project">
+                <input type="text" id="new-project" required maxlength="20">
             </div>
            
-            <button>Create Project</button>
+            <button class="create-project">Create Project</button>
         </form>
      </div>
 
@@ -186,11 +182,16 @@
     <div class="task-modal hidden">
         <div class="modal-name">
             <h3>Task</h3>
+            <svg class="close-task-modal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>close-box-outline</title><path d="M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V5H19V19M17,8.4L13.4,12L17,15.6L15.6,17L12,13.4L8.4,17L7,15.6L10.6,12L7,8.4L8.4,7L12,10.6L15.6,7L17,8.4Z" /></svg>
         </div>
         <form action="">
             <div class="form-name">
+                <label for="title">Project:</label>
+                <select class="project-select"></select>
+            </div>
+            <div class="form-name">
                 <label for="title">Title:</label>
-                <input type="text" id="title">
+                <input type="text" id="title" required maxlength="20">
             </div>
             <div class="form-name">
                 <label for="description">Description:</label>
@@ -198,7 +199,7 @@
             </div>
             <div class="form-name">
                 <label for="due-date">Due date:</label>
-                <input type="date">
+                <input type="date" id="due-date">
             </div>
             <div class="form-name">
                 <label for="priority">Priority:</label>
@@ -208,7 +209,7 @@
                     <option value="high">High</option>
                 </select>
             </div>
-            <button>Create Project</button>
+            <button class="create-task-submit">Create Task</button>
         </form>
     </div>
 </body>
