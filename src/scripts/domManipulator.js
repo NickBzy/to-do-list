@@ -94,40 +94,46 @@ function renderTasksList(project, projectTasks) {
 
         task.appendChild(date);
 
-        const priorityIcon = document.createElement("svg");
+        const priorityIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         priorityIcon.classList.add(project.tasks[i].getPriority());
+        priorityIcon.setAttribute("height", 20);
+        priorityIcon.setAttribute("width", 20);
         priorityIcon.setAttribute("xmlns", "http://www.w3.org/2000/svg");
         priorityIcon.setAttribute("viewBox", "0 0 24 24");
-        const priorityTitle = document.createElement("title");
+        const priorityTitle = document.createElementNS("http://www.w3.org/2000/svg", "title");
         priorityTitle.innerText = "circle-half-full";
         priorityIcon.appendChild(priorityTitle);
-        const priorityPath = document.createElement("path");
+        const priorityPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
         priorityPath.setAttribute("d", "M12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2M12 4A8 8 0 0 1 20 12A8 8 0 0 1 12 20V4Z");
         priorityIcon.appendChild(priorityPath);
         
         task.appendChild(priorityIcon);
 
-        const editIcon = document.createElement("svg");
+        const editIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         editIcon.classList.add("button");
+        editIcon.setAttribute("height", 20);
+        editIcon.setAttribute("width", 20);
         editIcon.setAttribute("xmlns", "http://www.w3.org/2000/svg");
         editIcon.setAttribute("viewBox", "0 0 24 24");
-        const editTitle = document.createElement("title");
+        const editTitle = document.createElementNS("http://www.w3.org/2000/svg", "title");
         editTitle.innerText = "pencil";
         editIcon.appendChild(editTitle);
-        const editPath = document.createElement("path");
+        const editPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
         editPath.setAttribute("d", "M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z");
         editIcon.appendChild(editPath);
 
         task.appendChild(editIcon);
 
-        const deleteIcon = document.createElement("svg");
+        const deleteIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         deleteIcon.classList.add("button");
+        deleteIcon.setAttribute("height", 20);
+        deleteIcon.setAttribute("width", 20);
         deleteIcon.setAttribute("xmlns", "http://www.w3.org/2000/svg");
         deleteIcon.setAttribute("viewBox", "0 0 24 24");
-        const deleteTitle = document.createElement("title");
+        const deleteTitle = document.createElementNS("http://www.w3.org/2000/svg", "title");
         deleteTitle.innerText = "trash-can";
         deleteIcon.appendChild(deleteTitle);
-        const deletePath = document.createElement("path");
+        const deletePath = document.createElementNS("http://www.w3.org/2000/svg", "path");
         deletePath.setAttribute("d", "M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z");
         deleteIcon.appendChild(deletePath);
 

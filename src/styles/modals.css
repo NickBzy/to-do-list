@@ -157,7 +157,7 @@ main .projects-grid .project-item.selected {
   }
 
   main .projects-grid .project-item.selected .project-tasks .task svg.light {
-    fill: var(--light-green);
+    fill: var(--green);
   }
 
   main .projects-grid .project-item.selected .project-tasks .task svg.moderate {
@@ -169,11 +169,11 @@ main .projects-grid .project-item.selected {
   }
 
   main .projects-grid .project-item.selected .project-tasks .task svg.button {
-    fill: var(--white);
+    fill: var(--dark-green);
     cursor: pointer;
   }  
 
   main .projects-grid .project-item.selected .project-tasks .task svg.button:hover {
-    fill: var(--dark-green);
+    fill: var(--white);
     transform: scale(1.2);
   }

@@ -84,10 +84,10 @@ projectsGrid.addEventListener("click", function(event){
 // GENERAL CREATE TASK BUTTON
 const createTaskButton = document.querySelector(".create-task-general");
 createTaskButton.addEventListener("click", ()=> displayTaskModal(projects));
-const projectSelect = document.querySelector(".project-select");
+
 const closeTaskModal = document.querySelector(".close-task-modal");
 closeTaskModal.addEventListener("click", () => {
-    if (projectSelect.disabled) {
+    if (projectIsShown()) {
         closeTaskModalOnly();
     } else {
         hideTaskModal();
@@ -104,10 +104,6 @@ projectsGrid.addEventListener("click", function(event){
 });
 
 document.querySelector(".overlay").addEventListener("click", hideTaskModal);
-
-//CLOSE TASK MODAL
-// const closeTaskModal = document.querySelector(".close-task-modal");
-// closeTaskModal.addEventListener("click", closeTaskModalOnly);
 
 //CREATE NEW PROJECT
 const createProjectBtn = document.querySelector(".create-project");

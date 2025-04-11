@@ -59,7 +59,8 @@
     --light-grey: #d9d9d9;
     --border-radius-containers: 40px;
     --black: #000000;
-    --orange:rgb(224, 131, 9);
+    --green: rgb(129, 202, 129);
+    --orange:rgb(212, 157, 83);
     --red: rgba(223, 58, 17, 0.842);
     --transparent: transparent;
 }
