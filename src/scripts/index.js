@@ -129,6 +129,8 @@ createProjectBtn.addEventListener("click", function(event) {
     renderProjectsSideBar(projects, projectListSidebarSelector);
     renderProjectsList(projects, projectsGridSelector);
 
+    const createProjectForm = document.querySelector(".project-modal form");
+    createProjectForm.reset();
     hideProjectModal();
 })
 
