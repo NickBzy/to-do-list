@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+<script defer src="main.js"></script></head>
+<body>
+
+    <div class="overlay hidden"></div> <!-- hidden -->
+    <div class="container">
+        <header>
+            <h1>TODO LIST</h1>
+        </header>
+        <nav class="sidebar">
+            <div class="stats">
+                <h3>YOUR PROJECTS:</h3>
+                <span id="number-projects">0</span>
+            </div>
+            <div class="projects-list">
+                
+            </div>
+            <button class="add-project">+ Add a Project</button>
+        </nav>
+        <main>
+            <button class="create-task-general">+ Create a task</button>
+            <div class="projects-grid">
+                <!-- selected -->
+                <!-- <div class="project-item selected"> 
+                    <div class="project-name">
+                        <h3>GYM</h3>
+                    </div>
+                    <div class="project-tasks">
+                        <div class="task">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" />
+                                <span class="checkmark"></span>
+                                <span class="task-title">Subscribe to newsletter</span>
+                            </label>
+                            <p>11 dec</p>
+                            <svg class="light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>circle-half-full</title><path d="M12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2M12 4A8 8 0 0 1 20 12A8 8 0 0 1 12 20V4Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg>
+                        </div>
+                        
+                        <div class="task">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" />
+                                <span class="checkmark"></span>
+                                <span class="task-title">Subscribe to newsletter</span>
+                            </label>
+                            <p>11 dec</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>circle-half-full</title><path d="M12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2M12 4A8 8 0 0 1 20 12A8 8 0 0 1 12 20V4Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg>
+                        </div>
+                        <div class="task">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" />
+                                <span class="checkmark"></span>
+                                <span class="task-title">Subscribe to newsletter</span>
+                            </label>
+                            <p>11 dec</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>circle-half-full</title><path d="M12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2M12 4A8 8 0 0 1 20 12A8 8 0 0 1 12 20V4Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg>
+                        </div>
+                        <div class="task">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" />
+                                <span class="checkmark"></span>
+                                <span class="task-title">Subscribe to newsletter</span>
+                            </label>
+                            <p>11 dec</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>circle-half-full</title><path d="M12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2M12 4A8 8 0 0 1 20 12A8 8 0 0 1 12 20V4Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg>
+                        </div>
+                        <div class="task">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" />
+                                <span class="checkmark"></span>
+                                <span class="task-title">Subscribe to newsletter</span>
+                            </label>
+                            <p>11 dec</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>circle-half-full</title><path d="M12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2M12 4A8 8 0 0 1 20 12A8 8 0 0 1 12 20V4Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg>
+                        </div>
+                        <div class="task">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" />
+                                <span class="checkmark"></span>
+                                <span class="task-title">Subscribe to newsletter</span>
+                            </label>
+                            <p>11 dec</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>circle-half-full</title><path d="M12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2M12 4A8 8 0 0 1 20 12A8 8 0 0 1 12 20V4Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg>
+                        </div>
+                        <div class="task">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" />
+                                <span class="checkmark"></span>
+                                <span class="task-title">Subscribe to newsletter</span>
+                            </label>
+                            <p>11 dec</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>circle-half-full</title><path d="M12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2M12 4A8 8 0 0 1 20 12A8 8 0 0 1 12 20V4Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg>
+                        </div>
+                        <div class="task">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" />
+                                <span class="checkmark"></span>
+                                <span class="task-title">Subscribe to newsletter</span>
+                            </label>
+                            <p>11 dec</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>circle-half-full</title><path d="M12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2M12 4A8 8 0 0 1 20 12A8 8 0 0 1 12 20V4Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg>
+                        </div>
+                        <div class="task">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" />
+                                <span class="checkmark"></span>
+                                <span class="task-title">Subscribe to newsletter</span>
+                            </label>
+                            <p>11 dec</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>circle-half-full</title><path d="M12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2M12 4A8 8 0 0 1 20 12A8 8 0 0 1 12 20V4Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg>
+                        </div>
+                        <button class="create-task">+ Create a task</button>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-name">
+
+                    </div>
+                    <div class="project-tasks">
+                        
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-name">
+
+                    </div>
+                    <div class="project-tasks">
+                        
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-name">
+
+                    </div>
+                    <div class="project-tasks">
+                        
+                    </div>
+                </div>
+                <button class="add-project">+ Add a Project</button> -->
+            </div>
+        </main>
+    </div>
+
+    <!-- ADD A PROJECT MODAL -->
+     <div class="project-modal hidden">
+        <div class="modal-name">
+            <h3>New Project</h3>
+        </div>
+        <form action="">
+            <div class="form-name">
+                <label for="project">Project:</label>
+                <input type="text" id="new-project" required maxlength="20">
+            </div>
+           
+            <button class="create-project">Create Project</button>
+        </form>
+     </div>
+
+     <!-- ADD A TASK MODAL -->
+    <div class="task-modal hidden">
+        <div class="modal-name">
+            <h3>Task</h3>
+            <svg class="close-task-modal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>close-box-outline</title><path d="M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V5H19V19M17,8.4L13.4,12L17,15.6L15.6,17L12,13.4L8.4,17L7,15.6L10.6,12L7,8.4L8.4,7L12,10.6L15.6,7L17,8.4Z" /></svg>
+        </div>
+        <form action="">
+            <div class="form-name">
+                <label for="title">Project:</label>
+                <select class="project-select"></select>
+            </div>
+            <div class="form-name">
+                <label for="title">Title:</label>
+                <input type="text" id="title" required maxlength="20">
+            </div>
+            <div class="form-name">
+                <label for="description">Description:</label>
+                <textarea name="description" id="description" rows="4"></textarea>
+            </div>
+            <div class="form-name">
+                <label for="due-date">Due date:</label>
+                <input type="date" id="due-date">
+            </div>
+            <div class="form-name">
+                <label for="priority">Priority:</label>
+                <select name="priority" id="priority">
+                    <option value="light">Light</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <button class="create-task-submit">Create Task</button>
+        </form>
+    </div>
+</body>
+</html>
