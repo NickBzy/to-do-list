@@ -1,10 +1,9 @@
-function createTask(title, description, dueDate, priority) {
+function createTask(title, description, dueDate, priority, id = crypto.randomUUID()) {
     let taskTitle = title;
     let taskDescription = description;
     let taskDate = dueDate;
     let taskPriority = priority;
     let taskComplete = false;
-    const id = crypto.randomUUID();
 
     function getId() {
         return id;

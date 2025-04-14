@@ -1,0 +1,23 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+build
+
+# Optional caches
+.cache
+coverage
+
+# Configs and env files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.env
+.env.*
+
+# System files
+.DS_Store
+
+# Prettier itself
+.prettierignore
